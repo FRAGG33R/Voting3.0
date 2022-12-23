@@ -2,7 +2,7 @@ pragma solidity >=0.4.16 <0.9.0;
 
 contract nftCollection {
 
-	bytes[] private	collection = [
+	string[] private collection = [
 			"QmVUMezmjvy5yZawz4PkxxzdN3iquoYDA7UtcRTmpHCTxj",
 			"WQmNZrX7pg4kVFvq8hp933cfY2K4jDLSTd5zWnsbJE2SgW",
 			"QmVymqnF8Us4xJTo29vApVmxrpjsTsPb9DE31YSBQLACJ7",
@@ -16,9 +16,8 @@ contract nftCollection {
 			"QmdSuF1GPDQd3iRqYeYwejLVasFCvghPAW7Sy3bTRDWYm2",
 			"QmcenJFLUy4AMrFzDTVLd2Ld6Jz9E7fEyTK6HTykFkeb7Z"
 	];
-
-	function getCollection() view public returns(bytes[])
+	function getCollection() view public returns(string[] memory)
 	{
-		return (this.collection);
+		return (collection);
 	}
 }
