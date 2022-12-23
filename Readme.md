@@ -1,6 +1,6 @@
 # **Decentralized Voting Application**
 
-This project is a decentralized application (DApp) for voting on the Ethereum blockchain. It is built using Solidity for the smart contracts and Truffle for the development environment.
+This project is a decentralized application (DApp) that utilizes the Ethereum blockchain to implement a voting system. It is implemented using the Solidity programming language to create the necessary smart contracts, and Truffle is used as the development environment.
 
 ## **Features**
 
