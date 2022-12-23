@@ -37,3 +37,14 @@ We welcome contributions to this project! Please follow these steps to contribut
 ## **License**
 
 This project is released under the MIT License.
+
+## **decentralized application to do list**
+
+- [ ]  setup truffle environment
+- [ ]  build the smart contract
+- [ ]  test the smart contract
+- [ ]  deploy the smart contract
+- [ ]  front-end using reactjs tailwindcss
+- [ ]  merge the front end with the backend
+- [ ]  test the app
+- [ ]  deploy the app with final result
