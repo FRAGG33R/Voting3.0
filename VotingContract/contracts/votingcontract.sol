@@ -15,6 +15,7 @@ contract NftVoting {
 	}
 
 	function getNumberVotes(bytes32 _nftHash) public view returns(uint) {
+		require(_nftHash != 0x0);
 		return nftVotesCount[_nftHash];
 	}
 

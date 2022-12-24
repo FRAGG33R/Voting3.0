@@ -13,7 +13,7 @@ contract("NftVoting", accounts => {
 
   it("should not allow voting for an empty NFT hash", async () => {
     const contract = await NftVoting.new();
-    const nftHash = "0x0000000000000000000000000000000000000000";
+    const nftHash;
 
     try {
       await contract.vote(nftHash);
