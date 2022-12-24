@@ -1,12 +1,10 @@
-This Solidity contract defines a contract called **`NftVoting`** that allows users to vote for a specified NFT by calling the **`vote()`** function. The contract maintains two mappings:
+This is a Solidity contract called **`NftVoting`**, which allows users to vote on non-fungible tokens (NFTs) using the Ethereum blockchain.
 
-1. **`nftVotesCount`**, which is a mapping from a bytes32 value (representing the hash of an NFT) to a uint (representing the number of votes received for that NFT).
-2. **`voterCount`**, which is a mapping from an address (representing the Ethereum address of a voter) to a uint (representing the number of votes that the voter has cast).
+The contract has a few key features:
 
-The **`vote()`** function has the following logic:
+- It has an event called **`voteRegister`**, which is triggered whenever a vote is registered in the contract. The event takes two indexed arguments: **`_nftHash`**, which is the bytes32 value being voted on, and **`voter`**, which is the address of the voter. This allows users to listen for and track votes on the blockchain.
+- It has two mappings: **`nftVotesCount`** and **`voterCount`**. The **`nftVotesCount`** mapping is used to store the number of votes for each bytes32 value, and the **`voterCount`** mapping is used to store the number of votes for each voter address. These mappings allow the contract to keep track of the total number of votes for each NFT and the total number of votes for each voter.
+- It has a function called **`vote`**, which allows a user to cast a vote for a given bytes32 value. The function takes one input, a bytes32 value called **`_nftHash`**, which represents the NFT being voted on. The function first checks that the bytes32 value is not equal to the zero value, and that the voter has not already voted. If these conditions are met, it increments the vote count for the bytes32 value in the **`nftVotesCount`** mapping and the voter address in the **`voterCount`** mapping. Finally, it triggers the **`voteRegister`** event, which allows users to listen for and track votes on the blockchain.
+- It has a function called **`getNumberVotes`**, which allows a user to retrieve the number of votes for a given bytes32 value. The function takes one input, a bytes32 value called **`_nftHash`**, which represents the NFT being queried. The function first checks that the bytes32 value is not equal to the zero value, and then returns the vote count from the **`nftVotesCount`** mapping.
 
-1. It uses a **`require`** statement to check if the voter has already voted by checking the value in the **`voterCount`** mapping for the voter's Ethereum address. If the voter has already voted, the **`require`** statement will trigger and the execution of the contract will be halted.
-2. If the **`require`** statement does not trigger, the function increments the value in the **`nftVotesCount`** mapping for the specified NFT by 1.
-3. The function increments the value in the **`voterCount`** mapping for the voter's Ethereum address by 1.
-
-The **`getNumberVotes()`** function is a view function that returns the number of votes received for a specified NFT by looking up the value in the **`nftVotesCount`** mapping for the NFT's hash.
+The **`pragma solidity`** directive at the top of the code specifies the version of Solidity that the contract is compatible with. In this case, it specifies that the contract is compatible with Solidity versions >=0.5.0 and <0.6.0. This means that the contract can be compiled with any Solidity compiler that is version 0.5.0 or higher, but less than version 0.6.0.
