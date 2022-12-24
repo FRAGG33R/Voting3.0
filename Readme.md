@@ -1,50 +1,45 @@
-# **Decentralized Voting Application**
+# **NFT Collection**
 
-This project is a decentralized application (DApp) for voting on the Ethereum blockchain. It is built using Solidity for the smart contracts and Truffle for the development environment.
+This is a simple smart contract for an NFT collection that allows the owner to mint new NFTs and transfer them to other addresses.
 
 ## **Features**
 
-- Users can create and vote in polls.
-- Poll results are stored on the blockchain and cannot be tampered with.
-- Only registered users can vote.
+- The **`mint`** function allows the owner to mint a new NFT with a given name and IPFS hash, and assign it a unique ID.
+- The **`transfer`** function allows the owner of an NFT to transfer it to another address.
+- The **`getNft`** function allows anyone to view the metadata of a specific NFT, including its name, IPFS hash, and owner.
+- The contract emits the **`action`** event when an NFT is minted, and the **`send`** event when an NFT is transferred.
 
-## **Installation**
+## **Requirements**
 
-1. Install Truffle: **`npm install -g truffle`**
-2. Install the project dependencies: **`npm install`**
-3. Compile the smart contracts: **`truffle compile`**
-4. Migrate the contracts to the blockchain: **`truffle migrate`**
+- Solidity >= 0.4.16
+- A compatible Ethereum blockchain (e.g., Ganache, Rinkeby, Mainnet)
+
+## **Deployment**
+
+To deploy the contract, you will need a compatible Ethereum wallet (e.g., MetaMask) and a tool such as Truffle or Remix.
+
+1. Clone this repository and navigate to the project directory.
+2. Install the required dependencies: **`npm install`**
+3. Compile the contract: **`truffle compile`**
+4. Connect to your Ethereum network and unlock your wallet.
+5. Deploy the contract: **`truffle migrate --reset`**
 
 ## **Usage**
 
-To run the DApp, start a local development server: **`npm run start`**
+To use the contract, you will need to call its functions using an Ethereum wallet or a tool such as Remix.
 
-Then, open the DApp in your web browser at **[http://localhost:3000](http://localhost:3000/)**.
+### **Minting a new NFT**
 
-## **Testing**
+To mint a new NFT, call the **`mint`** function with the following arguments:
 
-To run the test suite, use the following command: **`truffle test`**
+- **`_name`**: the name of the NFT
+- **`_ipfsHash`**: the IPFS hash of the NFT
+- **`_id`**: the unique ID of the NFT
 
-## **Contributing**
+For example, in Remix:
 
-We welcome contributions to this project! Please follow these steps to contribute:
+```solidity
+nftCollection.mint("My NFT", "Qmabcdefg", 1);
+```
 
-1. Fork the repository.
-2. Create a new branch for your changes.
-3. Commit your changes and push to the new branch.
-4. Create a pull request.
-
-## **License**
-
-This project is released under the MIT License.
-
-## **decentralized application to do list**
-
-- [ ]  setup truffle environment
-- [ ]  build the smart contract
-- [ ]  test the smart contract
-- [ ]  deploy the smart contract
-- [ ]  front-end using reactjs tailwindcss
-- [ ]  merge the front end with the backend
-- [ ]  test the app
-- [ ]  deploy the app with final result
+This will mint a new NFT with the given name, IPFS hash, and ID, and assign it to
