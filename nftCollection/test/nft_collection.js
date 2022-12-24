@@ -6,62 +6,44 @@ contract('nftCollection', (accounts) => {
   const recipient = accounts[1];
 
   beforeEach(async () => {
-    nft = await nftCollection.new({ from: owner });
+    nft = await nftCollection.new(owner, { from: owner });
   });
 
-  it('should mint a new NFT', async () => {
+  it('should return the correct NFT information', async () => {
     const id = 1;
     const name = 'My NFT';
     const ipfsHash = 'Qm123';
 
     await nft.mint(name, ipfsHash, owner, id, { from: owner });
 
-    const result = await nft.Collection(id);
-    assert.equal(result.name, name);
-    assert.equal(result.IpfsHash, ipfsHash);
-    assert.equal(result.owner, owner);
+    const [returnedName, returnedIpfsHash, returnedOwner] = await nft.getNft(id);
+    assert.equal(returnedName, name);
+    assert.equal(returnedIpfsHash, ipfsHash);
+    assert.equal(returnedOwner, owner);
   });
 
-  it('should transfer an NFT', async () => {
+  it('should return the correct NFT information after transfer', async () => {
     const id = 1;
     const name = 'My NFT';
     const ipfsHash = 'Qm123';
 
     await nft.mint(name, ipfsHash, owner, id, { from: owner });
-
     await nft.transfer(id, recipient, { from: owner });
 
-    const result = await nft.Collection(id);
-    assert.equal(result.owner, recipient);
+    const [returnedName, returnedIpfsHash, returnedOwner] = await nft.getNft(id);
+    assert.equal(returnedName, name);
+    assert.equal(returnedIpfsHash, ipfsHash);
+    assert.equal(returnedOwner, recipient);
   });
 
-  it('should fail to mint an NFT with a taken id', async () => {
+  it('should fail to get an NFT with an invalid id', async () => {
     const id = 1;
-    const name = 'My NFT';
-    const ipfsHash = 'Qm123';
-
-    await nft.mint(name, ipfsHash, owner, id, { from: owner });
 
     try {
-      await nft.mint(name, ipfsHash, owner, id, { from: owner });
+      await nft.getNft(id);
       assert.fail();
     } catch (error) {
-      assert.include(error.message, 'The Id already taken');
-    }
-  });
-
-  it('should fail to transfer an NFT that the sender does not own', async () => {
-    const id = 1;
-    const name = 'My NFT';
-    const ipfsHash = 'Qm123';
-
-    await nft.mint(name, ipfsHash, owner, id, { from: owner });
-
-    try {
-      await nft.transfer(id, recipient, { from: recipient });
-      assert.fail();
-    } catch (error) {
-      assert.include(error.message, 'You must own the nft');
+      assert.include(error.message, 'Error: Returned error: VM Exception while processing transaction: revert');
     }
   });
 });
