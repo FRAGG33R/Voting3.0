@@ -1,16 +1,12 @@
-import React from 'react';
 import './App.css';
+import ButtonAlert from './components/buttonAlert/buttonAlert';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-			Voting 3.0
-        </p>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<ButtonAlert></ButtonAlert>
+		</div>
+	);
 }
 
 export default App;
