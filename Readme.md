@@ -43,7 +43,7 @@ This project is released under the MIT License.
 - [x]  setup truffle environment
 - [x]  build the smart contracts (NFT collection and voting system)
 - [x]  test the smart contracts
-- [ ]  deploy the smart contracts
+- [x]  deploy the smart contracts
 - [ ]  front-end using reactjs tailwindcss
 - [ ]  merge the front end with the backend
 - [ ]  test the app
