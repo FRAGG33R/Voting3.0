@@ -56,7 +56,6 @@ const contractAbi : AbiItem[] = [
 	}
 ];
 
-
 const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
 export {contract, contractAbi, contractAddress, web3}

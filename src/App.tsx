@@ -1,4 +1,3 @@
-import './App.css';
 import ButtonAlert from './components/buttonAlert/buttonAlert';
 import ButtonConnect from './components/buttonConnect/buttonConnect';
 

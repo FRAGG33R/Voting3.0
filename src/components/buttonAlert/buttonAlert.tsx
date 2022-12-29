@@ -4,7 +4,7 @@ import {contract, web3 } from "../c_voting_info";
 async function setup()
 {
 	try {
-		const response = await contract.methods.vote("0x0").call();
+		const response = await contract.methods.vote("0x704Dd54f36A740327cfA0AddC9177479d2Bc092a").call();
 		console.log(response);
 	} catch (error) {
 		console.log(error);
@@ -13,7 +13,6 @@ async function setup()
 		fromBlock: 'latest',
 		toBlock: 'latest'
 	  }, (error, events) => {
-		console.log("heere");
 		console.log(events[0].returnValues._nftHash);
 	  });
 	  
