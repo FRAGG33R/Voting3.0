@@ -1,0 +1,29 @@
+.con:hover
+{
+}
+.nft
+{
+	transition: 0.5s;
+}
+
+.container
+{
+	transition: 0.5s;
+	width:370px !important
+}
+
+.container:hover
+{
+	justify-content: start;
+}
+.container:hover .nft
+{
+	width: 100%;
+	padding-top: 0px;
+	mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+*
+{
+	font-family: 'Josefin Sans', sans-serif;
+}
