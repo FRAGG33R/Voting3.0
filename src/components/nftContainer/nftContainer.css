@@ -1,14 +1,11 @@
-.con:hover
-{
-}
 .nft
 {
-	transition: 0.5s;
+	transition: 0.3s;
 }
 
 .container
 {
-	transition: 0.5s;
+	transition: 0.3s;
 	width:370px !important
 }
 
@@ -26,4 +23,6 @@
 *
 {
 	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+	
 }

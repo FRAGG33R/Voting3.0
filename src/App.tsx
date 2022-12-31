@@ -5,9 +5,16 @@ import NftContainer from './components/nftContainer/nftContainer';
 function App() {
 	return (
 		
-		<div className="w-screen h-screen bg-gradient-to-bl from-sky-800 via-sky-500 to-pink-400">
+		<div className="w-screen bg-[#19263f] relative h-auto min-h-screen">
 			<NavBar />
-			<NftContainer></NftContainer>
+			<div className='w-[98%] m-auto flex justify-center flex-wrap shrink-0'>
+				<NftContainer></NftContainer>
+				<NftContainer></NftContainer>
+				<NftContainer></NftContainer>
+				<NftContainer></NftContainer>
+				<NftContainer></NftContainer>
+				<NftContainer></NftContainer>
+			</div>
 		</div>
 	);
 }
