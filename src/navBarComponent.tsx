@@ -2,6 +2,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Web3 from 'web3';
 import logo from './assets/logo.png'
+import wallet from './assets/wallet-solid.svg'
 export default function NavBar() {
 	const navigation = [
 		{ name: 'Connect wallet', href: '#', current: false },
@@ -43,24 +44,30 @@ export default function NavBar() {
 				<img
 					src={logo}
 					alt="Company logo"
-					className="block h-50 w-10 md:hidden"
+					className="block h-50 w-14 md:hidden"
 					height={0}
 					width={0}
 				/>
 				<img
 					src={logo}
 					alt="Company logo"
-					className="hidden h-50 w-10 md:block"
+					className="hidden h-50 w-14 md:block"
 					height={0}
 					width={0}
 				/>
 			  </div>
 			  <div className="hidden sm:ml-12 md:block">
-				<button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 	group-hover:from-purple-500 group-hover:to-pink-500 text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
-					<span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#1A263F] dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-					Connect wallet
+				<a href="#_" onClick={() => { connectWallet()}} className="relative inline-block text-lg group">
+					<span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+					<span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-[#845CBD]"></span>
+					<span className="absolute left-0 w-56 h-56 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+					<span className="relative font-bold flex flex-row items-center">
+						<img className='h-6 w-7 pr-2' src={wallet}/>
+						Connect Wallet
 					</span>
-				</button>
+					</span>
+					<span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
+				</a>
 			  </div>
 			</div>
 		  </div>
@@ -68,11 +75,17 @@ export default function NavBar() {
 		<Disclosure.Panel className="md:hidden">
 		  <div className="space-y-1 px-2 pt-2 pb-3">
 			<Disclosure.Button>
-			<button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
-					<span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#1A263F] dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-					Connect wallet
+				<a href="#_" onClick={() => { connectWallet()}}  className="relative inline-block text-lg group">
+					<span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-white transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+					<span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-[#845CBD]"></span>
+					<span className="absolute left-0 w-56 h-56 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+					<span className="relative font-bold flex flex-row items-center">
+						<img className='h-6 w-8 pr-2' src={wallet}/>
+						Connect Wallet
 					</span>
-				</button>
+					</span>
+					<span className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
+				</a>
 			</Disclosure.Button>
 		  </div>
 		</Disclosure.Panel>

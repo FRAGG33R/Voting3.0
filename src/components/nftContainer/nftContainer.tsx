@@ -19,7 +19,7 @@ export default function nftContainer(props: images) {
 				<div className='text-[#845cbc] m-auto w-[300px] text-center border-black rounded-[8pt] flex justify-end flex-row pb-[5px] pr-[8px]'>
 					<p className='font-sans inline text-[14px] border-[1px] rounded-[15pt] w-[90px] border-[#845cbc]'><p className='font-sans inline text-white'>17</p> Votes</p>
 				</div>
-				<div className='vote m-auto cursor-pointer bg-[#845cbc] text-white rounded-[15pt] text-[30px] w-[300px] text-center h-[60px] flex items-center justify-center'>Vote</div>
+				<div className='vote m-auto cursor-pointer bg-[#845cbc] text-white rounded-[15pt] text-[30px] w-[300px] text-center h-[50px] flex items-center justify-center mt-4'>Vote</div>
 			</div>
 		</div>
 	);
