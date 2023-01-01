@@ -1,8 +1,8 @@
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Web3 from 'web3';
-import logo from './assets/logo.png'
-import wallet from './assets/wallet-solid.svg'
+import logo from '../../assets/logo.png'
+import wallet from '../../assets/wallet-solid.svg'
 export default function NavBar() {
 	const navigation = [
 		{ name: 'Connect wallet', href: '#', current: false },
