@@ -1,13 +1,19 @@
 import './nftContainer.css';
 import nft from '../../assets/0x0.png'
-export default function nftContainer() {
+import nft1 from '../../assets/sadf.avif'
+type images = 
+{
+	image: string
+	name: string
+}
+export default function nftContainer(props: images) {
 	return (
 		<div className='shrink-0 m-[12pt] container flex flex-col justify-start relative h-[500px] bg-[#0E172A] rounded-[8pt] duration-300 hover:drop-shadow-[0_25px_25px_rgba(0,0,0,0.5)] hover:w-[400px]'>
 			<div className='nft_c w-full flex justify-center'>
-				<img className='nft w-[300px] pt-[20px] rounded-[8pt]' src={nft} alt="" />
+				<img className='nft w-[300px] mt-[20px] rounded-[8pt]' src={props.image} alt="" />
 			</div>
 			<div className='py-[6px] shrink-0'>
-				<h2 className='font-bold w-full text-center text-white text-[40px]'>Bord Ape</h2>
+				<h2 className='font-bold w-full text-center text-white text-[35px]'>{props.name}</h2>
 			</div>
 			<div className='flex flex-col'>
 				<div className='text-[#845cbc] m-auto w-[300px] text-center border-black rounded-[8pt] flex justify-end flex-row pb-[5px] pr-[8px]'>
