@@ -17,7 +17,7 @@ import LandingPage from './components/LandingPage/LandingPageComponent';
 function App()
 {
 	return (
-		<div className="w-full bg-[#19263f] relative h-full min-h-screen">
+		<div className="w-full bg-[#19263f] relative h-full min-h-screen gap-x-12">
 			<NavBar />
 			<LandingPage />
 			<div className='w-[98%] m-auto h-full flex justify-center flex-wrap shrink-0 bg-[#19263f]'>
