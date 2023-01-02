@@ -16,22 +16,25 @@ import NftContainer from './components/nftContainer/nftContainer';
 import LandingPage from './components/LandingPage/LandingPageComponent';
 function App()
 {
+	const NFTs = [
+		{ path: nft0, name : "Divine Enlightenment"},
+		{ path: nft1, name : "The Mystic"},
+		{ path: nft2, name : "Celestial Dreamer"},
+		{ path: nft3, name : "The Oracle"},
+		{ path: nft4, name : "Psychedelic Visionary"},
+		{ path: nft5, name : "The Seer"},
+		{ path: nft6, name : "The Shaman"},
+		{ path: nft7, name : "Sacred Journeys"},
+		{ path: nft8, name : "The Visionary"},
+		{ path: nft9, name : "Mystical Realms"},
+		{ path: nft10, name : "The Enlightened One"},
+	]
 	return (
 		<div className="w-full bg-[#19263f] relative h-full min-h-screen gap-x-12">
 			<NavBar />
 			<LandingPage />
 			<div className='w-[98%] m-auto h-full flex justify-center flex-wrap shrink-0 bg-[#19263f]'>
-				<NftContainer image={nft0} name="Divine Enlightenment"></NftContainer>
-				<NftContainer image={nft1} name="The Mystic"></NftContainer>
-				<NftContainer image={nft2} name="Celestial Dreamer"></NftContainer>
-				<NftContainer image={nft3} name="The Oracle"></NftContainer>
-				<NftContainer image={nft4} name="Psychedelic Visionary" ></NftContainer>
-				<NftContainer image={nft5} name="The Seer"></NftContainer>
-				<NftContainer image={nft6} name="The Shaman" ></NftContainer>
-				<NftContainer image={nft7} name="Sacred Journeys" ></NftContainer>
-				<NftContainer image={nft8} name="The Visionary"></NftContainer>
-				<NftContainer image={nft9} name="Mystical Realms" ></NftContainer>
-				<NftContainer image={nft10} name="The Enlightened One"></NftContainer>
+				{NFTs.map((item) => <NftContainer image={item.path} name={item.name}></NftContainer>)}
 			</div>
 		</div>
 	);
